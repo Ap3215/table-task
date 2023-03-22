@@ -4,7 +4,7 @@ import classes from "./index.module.css";
 
 const SelectOption = ({ onChange, options }) => {
   return (
-    <select onChange={onChange} className={classes["form-select"]}>
+    <select onChange={onChange} className={classes["select-option"]}>
       {options.map((option) => (
         <option key={option} value={option}>
           {option}

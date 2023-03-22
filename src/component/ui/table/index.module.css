@@ -1,22 +1,23 @@
 .table {
-  width: 120rem;
-  display: flex;
-  justify-content: center;
-  flex-direction: column;
-  text-align: left;
-  align-items: center;
-  margin: 0 auto;
-  /* position: relative; */
+  width: 100%;
 }
-.table-title {
+.table__container {
+  overflow-y: auto;
+  height: 50rem;
+}
+
+.table__title {
   font-size: 2rem;
   text-transform: uppercase;
   font-family: var(--font-family);
   margin: 2rem;
+  text-align: center;
 }
+
 table {
   width: 100%;
   border-collapse: collapse;
+  position: relative;
 }
 
 th {

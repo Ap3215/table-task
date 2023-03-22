@@ -1,4 +1,13 @@
-.table--image {
+.table-data {
+  width: 120rem;
+  margin: 0 auto;
+}
+.table-data__image {
   width: 4rem;
   height: 4rem;
+}
+
+.table-data__input {
+  display: flex;
+  justify-content: flex-end;
 }

@@ -1,6 +1,5 @@
-.form-select {
+.select-option {
   margin-top: 2rem;
-  margin-left: 16rem;
   padding: 1rem;
   border: 1px solid var(--table-border);
 }

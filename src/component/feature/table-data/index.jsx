@@ -8,7 +8,14 @@ import SelectOption from "../../ui/select-option";
 import classes from "./index.module.css";
 
 const options = ["Select Number", "5", "10", "15", "20"];
-const headings = ["Id", "Image", "Name", "ContactNumber", "Email", "DOB"];
+const headings = [
+  "Id",
+  "Image",
+  "Name",
+  "Contact Number",
+  "Email",
+  "Date of Birth",
+];
 
 const TableData = () => {
   const [employedetails, setEmployeDetails] = useState([]);
@@ -41,16 +48,17 @@ const TableData = () => {
   }, [dataPerPage]);
 
   return (
-    <>
-      <SelectOption onChange={onSizeChangeHandler} options={options} />
-
+    <div className={classes["table-data"]}>
+      <div className={classes["table-data__input"]}>
+        <SelectOption onChange={onSizeChangeHandler} options={options} />
+      </div>
       <Table headings={headings} title="Employee Data">
         {employedetails.map((employees) => (
           <tr key={employees.id}>
             <td>{employees.id}</td>
             <td>
               <img
-                className={classes["table--image"]}
+                className={classes["table-data__image"]}
                 src={employees.imageUrl}
                 alt="data"
               />
@@ -62,7 +70,7 @@ const TableData = () => {
           </tr>
         ))}
       </Table>
-    </>
+    </div>
   );
 };
 export default TableData;
