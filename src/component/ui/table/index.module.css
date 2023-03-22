@@ -1,0 +1,42 @@
+.table {
+  width: 120rem;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  text-align: left;
+  align-items: center;
+  margin: 0 auto;
+  /* position: relative; */
+}
+.table-title {
+  font-size: 2rem;
+  text-transform: uppercase;
+  font-family: var(--font-family);
+  margin: 2rem;
+}
+table {
+  width: 100%;
+  border-collapse: collapse;
+}
+
+th {
+  background-color: var(--heading-color);
+  color: var(--white-color);
+  line-height: 1.4;
+  font-size: 1.8rem;
+  font-family: var(--font-family);
+}
+td {
+  font-size: 1.6rem;
+  font-family: var(--font-family);
+}
+th,
+td {
+  padding: 1rem;
+  text-align: left;
+  border-bottom: 1px solid var(--table-border);
+}
+
+tr:nth-child(even) {
+  background-color: var(--row-color);
+}

@@ -1,60 +1,22 @@
-import React, { useState, useEffect } from "react";
+import React from "react";
 
-import axios from "axios";
-import Input from "../../ui/select_input";
+import classes from "./index.module.css";
 
-const Table = () => {
-  const [employedetails, setEmployeDetails] = useState([]);
-
-  const [dataPerPage, SetDataPerPage] = useState(5);
-
-  const fetchData = () => {
-    axios
-      .get("https://hub.dummyapis.com/employee?noofRecords=50&idStarts=1001")
-      .then((res) => {
-        setEmployeDetails(res.data);
-        console.log(employedetails);
-      })
-      .catch((error) => {
-        console.log(error.message);
-      });
-  };
-
-  useEffect(() => {
-    fetchData();
-  }, []);
-
-  const onShowsizeChangeHandler = (e) => {
-    SetDataPerPage(pageSize);
-  };
-
+const Table = ({ headings, title, children }) => {
   return (
-    <>
-      <h3> Table Data</h3>
-      <Input onChange={onShowsizeChangeHandler} />
+    <div className={classes["table"]}>
+      <h3 className={classes["table-title"]}>{title}</h3>
       <table>
         <thead>
-          <th>Id</th>
-
-          <th>Name</th>
-          <th>Contact Number</th>
-          <th>Email</th>
-          <th>DOB</th>
-          <th></th>
+          <tr>
+            {headings.map((heading) => (
+              <th key={heading}>{heading}</th>
+            ))}
+          </tr>
         </thead>
-        <tbody>
-          {employedetails.map((employees) => (
-            <tr key={employees.id}>
-              <td>{employees.id}</td>
-              <td>{`${employees.firstName} ${employees.lastName}`}</td>
-              <td>{employees.contactNumber}</td>
-              <td>{employees.email}</td>
-              <td>{employees.dob}</td>
-            </tr>
-          ))}
-        </tbody>
+        <tbody>{children}</tbody>
       </table>
-    </>
+    </div>
   );
 };
 export default Table;

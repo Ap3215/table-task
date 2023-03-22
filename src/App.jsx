@@ -1,12 +1,12 @@
 import React from "react";
 
-import Table from "./component/layout/table";
+import TableData from "./component/feature/table-data";
 
 const App = () => {
   return (
-    <div>
-      <Table />
-    </div>
+    <>
+      <TableData />
+    </>
   );
 };
 
